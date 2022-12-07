@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 
 function UserInput() {
-    const [url, setUrl] = useState<any>('');
+    const [url, setUrl] = useState<string>('');
 
     const handleSubmit = () => {
         window.alert(url);
     }
 
     return (
-        <div className="url-input">
+        <div className="url-input-container">
             <h3>Enter a URL to fetch from</h3>
             <span>
-                <input inputMode="text" type="text" id="url-input" value={url} required onChange={event => setUrl(event.target.value)}/>
-                <button onClick={handleSubmit}>Submit</button>
+                <input className="input-field" inputMode="text" type="text" id="url-input" value={url} required onChange={event => setUrl(event.target.value)}/>
+                <button className="submit-btn" onClick={handleSubmit}>Submit</button>
             </span>
         </div>
     );
