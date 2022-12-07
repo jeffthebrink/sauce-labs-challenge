@@ -24,8 +24,7 @@ function UserInput() {
                 <input className="input-field" inputMode="text" type="text" id="url-input" value={url} required onChange={event => setUrl(event.target.value)}/>
                 <button className="submit-btn" onClick={handleSubmit}>Submit</button>
             </span>
-            {response && <Response response={response} />
-            }
+            {response && <Response response={response} url={url} />}
         </div>
     );
 }

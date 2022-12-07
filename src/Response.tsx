@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
 
 interface ResponseProps {
-    response: unknown
+    response: unknown,
+    url: string
 }
 
-function Response({response}: ResponseProps) {
+function Response({response, url}: ResponseProps) {
     const [responseState, setResponseState] = useState<unknown>();
 
     useEffect(() => {
@@ -18,7 +19,7 @@ function Response({response}: ResponseProps) {
             <table>
                 <thead>
                 <tr>
-                    <th colSpan={2}>The table header</th>
+                    <th colSpan={2}>Response From {url}</th>
                 </tr>
                 </thead>
                 <tbody>
