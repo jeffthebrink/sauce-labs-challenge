@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
+import Response from "./Response";
 
 function UserInput() {
     const [url, setUrl] = useState<string>('');
+    const [response, setResponse] = useState<any>(null);
 
-    const handleSubmit = () => {
-        window.alert(url);
+    const handleSubmit = async () => {
+        if (url.length < 1) return;
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        const content = await response.json();
+        setResponse(content);
     }
 
     return (
@@ -14,6 +24,8 @@ function UserInput() {
                 <input className="input-field" inputMode="text" type="text" id="url-input" value={url} required onChange={event => setUrl(event.target.value)}/>
                 <button className="submit-btn" onClick={handleSubmit}>Submit</button>
             </span>
+            {response && <Response response={response} />
+            }
         </div>
     );
 }
