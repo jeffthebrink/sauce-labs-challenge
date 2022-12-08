@@ -40,11 +40,17 @@ function ResponseItem({responseItem, renderButton}: ResponseItemProps) {
     return (
         <div className="response-item-container">
             {renderButton ? (
+                responseItem ? (
                 <button className={"response-item-key"} onClick={() => {
                     setViewValue(prev => !prev);
                 }}>
                     {handleKey()}
                 </button>
+                ) : (
+                    <div>
+                        empty
+                    </div>
+                )
             ) : (
                 <div className={"response-item-key"}>
                     {handleKey()}
