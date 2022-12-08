@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Sauce Labs Unstructured JSON Challenge
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -38,6 +38,12 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Using This Application
+Clone this repo and then run `npm start`. Then, if not automatically redirected, open a browser and navigate to `localhost:3000`.\
+You'll then see an input field along with Submit and Clear buttons. Run the application by typing an endpoint url (that will return JSON data) into the input field and then press Submit or hit the enter key.
+You will then be presented with the JSON data visually. If you can drill down into the data, a button will be shown. If you cannot drill into the data anymore, simple text is shown. If a null value occurs, the string 'empty' will be shown.\
+This is a simple application, so there is no url validation currently in place.
 
 ## Learn More
 
