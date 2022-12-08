@@ -33,6 +33,14 @@
   min-width: 330px;
 }
 
+.submit-btn {
+  min-width: 70px;
+}
+
+.url-input-container hr {
+  width: 460px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

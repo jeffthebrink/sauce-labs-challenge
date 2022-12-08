@@ -50,6 +50,7 @@ function UserInput() {
                     setShowResponse(false);
                 }}>Clear</button>
             </span>
+            <hr/>
             {response && showResponse && <Response response={response} url={url}/>}
         </div>
     );

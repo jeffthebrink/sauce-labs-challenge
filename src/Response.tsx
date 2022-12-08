@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, {useMemo} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import ResponseItem from "./ResponseItem";
 
@@ -14,7 +14,7 @@ function Response({response, url}: ResponseProps) {
 
     return (
         <div className="response-container">
-            <h2>Response from {url}:</h2>
+            <h4>Response from {url}:</h4>
             {response && responseList.map((item) => {
                 return (
                     <span key={uuidv4()}>
