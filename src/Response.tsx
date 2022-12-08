@@ -1,34 +1,28 @@
-import React, {useEffect, useState} from 'react';
+import React, { useMemo } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import ResponseItem from "./ResponseItem";
 
 interface ResponseProps {
-    response: unknown,
+    response: {},
     url: string
 }
 
 function Response({response, url}: ResponseProps) {
-    const [responseState, setResponseState] = useState<unknown>();
-
-    useEffect(() => {
-        if (response) {
-            setResponseState(response);
-        }
+    const responseList = useMemo(() => {
+        return Object.entries(response);
     }, [response]);
 
     return (
         <div className="response-container">
-            <table>
-                <thead>
-                <tr>
-                    <th colSpan={2}>Response From {url}</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>The table body</td>
-                    <td>with two columns</td>
-                </tr>
-                </tbody>
-            </table>
+            <h2>Response from {url}:</h2>
+            {response && responseList.map((item) => {
+                return (
+                    <span key={uuidv4()}>
+                        <ResponseItem responseItem={item} renderButton />
+                    </span>
+                )
+            })
+            }
         </div>
     );
 }

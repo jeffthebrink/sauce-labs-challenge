@@ -9,9 +9,7 @@ function UserInput() {
         if (url.length < 1) return;
         const response = await fetch(url, {
             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: {},
         });
         const content = await response.json();
         setResponse(content);
